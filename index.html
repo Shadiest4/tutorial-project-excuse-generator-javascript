@@ -3,15 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Excuse generator<but class=""></but></title>
+  <title>Excuse Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap">
 </head>
 <body>
-  <div class="card">
-    <h1>OMG! you wont't believe me, but... </h1>
-    <h2 id="excuse"></h2>
-    <script src="app.js"></script>
+  <div class="scene">
+    <h1 class="main-title">Excuse Generator</h1>
+    <div class="card">
+      <div class="card-header">
+        <div class="file-icon">&#9889;</div>
+        <div class="header-text">
+          <p class="excuse-label">OMG! You won't believe me, but...</p>
+          <p class="excuse-text" id="excuse"></p>
+        </div>
+        <button class="refresh-btn" onclick="refreshExcuse()" aria-label="New excuse">↻</button>
+      </div>
+    </div>
   </div>
+  <script src="app.js"></script>
+  <script>
+    function refreshExcuse() {
+      document.getElementById('excuse').textContent = generateExcuse();
+    }
+    window.addEventListener('load', refreshExcuse);
+  </script>
 </body>
 </html>
